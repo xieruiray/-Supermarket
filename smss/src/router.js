@@ -1,23 +1,28 @@
+// 引入vue
 import Vue from 'vue'
+//引入路由
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-
+//Home组件
+// import Home from './views/Home.vue'
+//登录组件
+import Login from '@/views/Login/login.vue'
+//后端首页
+// import Admin from '@/views/Admin/index.vue'
+//注册路由
 Vue.use(Router)
 
+//注册login
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
-  ]
+    name: 'login',
+    path: '/',
+    component: Login
+  }
+]
+
 })
+
+ 
+
+   
