@@ -76,7 +76,7 @@ export default {
 
           // 通过路由跳转 跳转到后端系统首页
           //   console.log(this.$router) // vue实例可以直接获取路由对象
-          this.$router.push("/");
+          this.$router.push("/index");
         } else {
           console.log("非法输入，请输入正确的账号和密码");
           return false;
