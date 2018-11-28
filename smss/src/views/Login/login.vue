@@ -10,7 +10,7 @@
                     <el-input type="text" v-model="loginForm.password" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="确认密码" prop="checkPwd">
-                    <el-input v-model.number="loginForm.checkPwd"></el-input>
+                    <el-input v-model="loginForm.checkPwd"></el-input>
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click="submitForm('loginForm')">提交</el-button>
@@ -68,15 +68,16 @@ export default {
       // 否则 只要有一个表单验证不合法 valid就是false 那么不能提交
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("账号合法");
+          // alert("账号合法");
           //获取账号和密码
           let username = this.loginForm.user;
           let password = this.loginForm.password;
           console.log(username, password);
 
           // 通过路由跳转 跳转到后端系统首页
-          //   console.log(this.$router) // vue实例可以直接获取路由对象
-          this.$router.push("/index");
+            console.log(this.$router) // vue实例可以直接获取路由对象
+          this.$router.push("/");
+          
         } else {
           console.log("非法输入，请输入正确的账号和密码");
           return false;
@@ -91,7 +92,9 @@ export default {
 </script>
 <style lang="less">
 .login {
-  background-color: #2d3a4b;
+  // background-color:#ffffff;
+  background-image:url("./1.jpg");
+  background-repeat: repeat-x;
   height: 100%;
   .login-form {
     width: 500px;
